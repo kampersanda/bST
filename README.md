@@ -1,6 +1,6 @@
 # integer\_sketch\_search
 
-A C++17 implementation of data structures described in the paper: Shunsuke Kanda and Yasuo Tabei, "[b-Bit Sketch Trie: Scalable Similarity Search on Integer Sketches](https://arxiv.org/abs/1910.08278)," IEEE BigData 2019. This library supports to benchmark the single- and multi-index approaches through the b-bit sketch trie or the hash table, which tested in the paper.
+A C++17 implementation of data structures described in the paper: Shunsuke Kanda and Yasuo Tabei, "[b-Bit Sketch Trie: Scalable Similarity Search on Integer Sketches](https://arxiv.org/abs/1910.08278)," IEEE BigData 2019. This library supports to benchmark the single- and multi-index approaches through the b-bit sketch trie or the hash table.
 
 ## Build instructions
 
