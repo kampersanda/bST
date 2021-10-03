@@ -213,7 +213,7 @@ int bench_index(const cmdline::parser& p) {
 
             std::cout << "--> " << errs << " errs; " << double(num_ans) / queries.size() << " ans; ";
             std::cout << double(stat.num_cands) / queries.size() << " cands; ";
-            std::cout << double(stat.num_actnodes) / queries.size() << " actnodes; ";
+            // std::cout << double(stat.num_actnodes) / queries.size() << " actnodes; ";
             std::cout << elapsed / queries.size() << " ms" << std::endl;
 
             if (ABORT_BORDER_IN_MS * queries.size() < elapsed) {
