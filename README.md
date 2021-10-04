@@ -164,9 +164,7 @@ Now simlarity searching...
 
 ### Input data format
 
-Integer sketches should be stored in [TEXMEX's bvecs format](http://corpus-texmex.irisa.fr/). That is, the dimension number and feature values for each sketch are interleaved (in little endian), where the number is 4 bytes of size and each feature is 1 byte of size. In the same manner, the executables provided by the library can indicate the dimension number (32 or 64) to evaluate through argument `-m`. And, argument `-b` can indicate the number of lowest bits to evaluate for each feature (1 to 8).
-
-You can use [consistent\_weighted\_sampling](https://github.com/kampersanda/consistent_weighted_sampling) to generate such a dataset using the [GCWS](https://doi.org/10.1145/3097983.3098081) algorithm.
+Integer sketches should be stored in [TEXMEX's bvecs format](http://corpus-texmex.irisa.fr/). That is, the dimension number and feature values for each sketch are interleaved (in little endian), where the number is 4 bytes of size and each feature is 1 byte of size. To convert vectors of real numbers into sketches, you can use [consistent\_weighted\_sampling](https://github.com/kampersanda/consistent_weighted_sampling) to generate such a dataset using the [GCWS](https://doi.org/10.1145/3097983.3098081) algorithm.
 
 ## Licensing
 
