@@ -257,7 +257,16 @@ inline bool is_file_exist(const std::string& fn) {
 template <typename T>
 inline std::string realname() {
     int status;
-    return abi::__cxa_demangle(typeid(T).name(), nullptr, nullptr, &status);
+    char* name = abi::__cxa_demangle(typeid(T).name(), nullptr, nullptr, &status);
+
+    std::string ret;
+    if (name) {
+        if (status == 0) {
+            ret = std::string(name);
+        }
+        free(name);
+    }
+    return ret;
 }
 
 template <typename T>
