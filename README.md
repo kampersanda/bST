@@ -22,7 +22,23 @@ After the commands, the executables will be produced in `build/bin` directory.
 - CMake >= 3.0
 - [sdsl-lite](https://github.com/simongog/sdsl-lite) (should be installed at your home directory when the default `CMake` setting is used)
 
-## Example to run
+## Input data format
+
+Integer sketches should be stored in [TEXMEX's bvecs format](http://corpus-texmex.irisa.fr/). That is, the dimension number and feature values for each sketch are interleaved (in little endian), where the number is 4 bytes of size and each feature is 1 byte of size. To convert vectors of real numbers into sketches, you can use [consistent\_weighted\_sampling](https://github.com/kampersanda/consistent_weighted_sampling) to generate such a dataset using the [GCWS](https://doi.org/10.1145/3097983.3098081) algorithm.
+
+Or, if you have sketch data in ASCII format, you can use executable `bin/to_bvecs` to format it in the bvecs format.
+In the ASCII file, each sketch has to be written line-by-line, and each integer has to be separated by a whitespace, as follows.
+
+```
+$ cat sketch.txt 
+5 5 1 3 1 4 1 3
+5 5 3 3 1 2 1 2
+5 4 1 1 1 4 1 3
+$ ./bin/to_bvecs -i sketch.txt -o sketch.bvecs
+```
+
+
+## Example to benchmark
 
 You can use executable `bin/search` to benchmark the data structures.
 
@@ -43,7 +59,7 @@ options:
   -?, --help          print this message
 ```
 
-You can try it using toy datasets `data/news20.scale_{base|query}.cws.bvecs`. (The input data format will be explained later.)
+You can try it using toy datasets `data/news20.scale_{base|query}.cws.bvecs`.
 
 ### 1) Testing single-trie index
 
@@ -160,11 +176,6 @@ Now simlarity searching...
 --> 3 errs; 0.05 ans; 0.12 cands; 0 ms
 --> 5 errs; 0.11 ans; 0.14 cands; 0.01 ms
 ```
-
-
-### Input data format
-
-Integer sketches should be stored in [TEXMEX's bvecs format](http://corpus-texmex.irisa.fr/). That is, the dimension number and feature values for each sketch are interleaved (in little endian), where the number is 4 bytes of size and each feature is 1 byte of size. To convert vectors of real numbers into sketches, you can use [consistent\_weighted\_sampling](https://github.com/kampersanda/consistent_weighted_sampling) to generate such a dataset using the [GCWS](https://doi.org/10.1145/3097983.3098081) algorithm.
 
 ## Licensing
 
