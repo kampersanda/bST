@@ -25,7 +25,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 add_executable(search search.cpp)
 target_link_libraries(search sdsl)
 
-add_executable(format format.cpp)
-target_link_libraries(format sdsl)
+add_executable(to_bvecs to_bvecs.cpp)
+target_link_libraries(to_bvecs sdsl)
 
 file(COPY ${CMAKE_SOURCE_DIR}/data DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
