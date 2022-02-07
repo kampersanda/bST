@@ -1,4 +1,4 @@
-# integer\_sketch\_search
+# bST (b-bit sketch trie)
 
 A C++17 implementation of data structures described in the paper: Shunsuke Kanda and Yasuo Tabei, "[b-Bit Sketch Trie: Scalable Similarity Search on Integer Sketches](https://arxiv.org/abs/1910.08278)," IEEE BigData 2019. This library supports to benchmark the single- and multi-index approaches through the b-bit sketch trie or the hash table.
 
@@ -7,8 +7,8 @@ A C++17 implementation of data structures described in the paper: Shunsuke Kanda
 You can download and compile this library with the following commands:
 
 ```
-$ git clone https://github.com/kampersanda/integer_sketch_search.git
-$ cd integer_sketch_search
+$ git clone https://github.com/kampersanda/bST.git
+$ cd bST
 $ mkdir build && cd build
 $ cmake ..
 $ make -j
